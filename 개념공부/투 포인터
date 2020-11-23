@@ -1,0 +1,41 @@
+어떠한 배열에서 연속된 데이터 구간에서 무엇인가를 처리하기를 원하는 경우,
+ 가장 먼저 떠올려 볼 가치가 있는 알고리즘.
+  정렬 및 탐색으로 대부분 해결 가능하지만 투 포인터를 사용하면 퍼포먼스 향상 가능
+  
+  ex) 배열 A[N] 에서 부분 합이 M 이 되는 부분 수열의 갯수를 반환하시오.
+  
+      public class Main {
+          public static void main(String args[]) {
+
+            int number = 5; // M
+            int [] array = {1, 2, 3, 2, 5}; //A[N]
+
+            System.out.println(solution(number, array));
+          }
+
+          /* 해당 알고리즘을 구현할 method */
+          public static int solution(int number, int [] array) {
+
+              int start = 0; //부분 수열의 시작 인덱스
+              int end = 0; //부분 수열의 마지막 인덱스
+              int sum = 0; // 부분 수열의 합
+              int count = 0; //M과 합이 일치하는 부분 수열의 수
+
+              while(start < array.length) { //실행 조건 : 부분 수열의 시작 인덱스가 배열의 크기보다 작을 때
+                  if(sum > number || end == array.length) { //부분 수열의 시작 인덱스가 이동하는 조건
+                      sum -= array[start]; //시작 인덱스가 한칸 이동하므로 sum 또한 이동 전 인덱스의 value를 뺀다.
+                      start++; 
+                  }
+                  else {
+                      sum += array[end]; 
+                      end++; //end index 이동
+                  }
+                  if(sum == number) count++; //부분 배열의 합과 M 이 일치
+              }
+
+              return count;
+          }
+      }
+      
+      위의 예 에서는 O(N^2) 의 시간복잡도에서 O(N) 으로 퍼포먼스의 향상을 이끌어 낼 수 있었음.
+      
