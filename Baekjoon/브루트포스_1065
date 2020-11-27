@@ -1,0 +1,61 @@
+⭐️ problem ⭐️
+
+어떤 양의 정수 X의 각 자리가 등차수열을 이룬다면, 그 수를 한수라고 한다.
+등차수열은 연속된 두 개의 수의 차이가 일정한 수열을 말한다.
+N이 주어졌을 때, 1보다 크거나 같고, N보다 작거나 같은 한수의 개수를 출력하는 프로그램을 작성하시오. 
+
+## input
+첫째 줄에 1,000보다 작거나 같은 자연수 N이 주어진다.
+
+## output
+첫째 줄에 1보다 크거나 같고, N보다 작거나 같은 한수의 개수를 출력한다.
+
+
+
+👀 example input/output 👀
+
+110 / 99
+99 / 99
+1 / 1
+1000 / 144
+
+
+
+
+🐣🐣 solutions 🐣🐣
+
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner scanner = new Scanner(System.in);
+		
+		int limit = scanner.nextInt();
+		
+		scanner.close();
+	
+		if(limit <= 99) //because number of under 100 is absolutely han-su.
+			System.out.println(limit);
+		else System.out.println(counting(limit));
+		
+			
+	
+	}
+
+	public static int counting(int limit) {
+		
+		int count = 99; //counting when if this number is han-su
+		int first, second, last;
+		
+		for(int i = 100; i <= limit; i++) {
+			first = i / 100; //number of 100'
+			second = (i / 10) % 10; //number of 10'
+			last = i % 10; //number of 1'
+			if((second - first) == (last - second)) count++; //logic for checking this is han-su
+		}
+		return count;
+	}
+}
