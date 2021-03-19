@@ -1,4 +1,4 @@
-package LINE;
+package KAKAO.STRING_REGULAR_EXPRESSION;
 
 import java.util.Scanner;
 
