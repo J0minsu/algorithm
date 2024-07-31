@@ -1,0 +1,33 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] lottos, int[] win_nums) {
+
+        int[] answer = {};
+
+        Map<Integer, Boolean> map = new HashMap<>();
+
+        for (int winNum : win_nums) {
+            map.put(winNum, true);
+        }
+
+        int zeroCount = 0;
+        int correct = 0;
+
+        for (int lotto : lottos) {
+            if (map.containsKey(lotto)) {
+                correct++;
+            }
+            if (lotto == 0) {
+                zeroCount++;
+            }
+        }
+
+        return new int[]{makeRank(zeroCount + correct), makeRank(correct)};
+
+    }
+
+    public int makeRank(int correctCount) {
+        return correctCount <= 1 ? 6 : 7 - correctCount;
+    }
+}
