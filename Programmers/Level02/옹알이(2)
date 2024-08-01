@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    public int solution(String[] babbling) {
+
+        List<String> canSpeakWords = List.of("aya", "ye", "woo", "ma");
+        List<String> babblingList = List.of(babbling);
+
+        List<String> parsedList = new ArrayList<>();
+
+        for (int i = 0; i < babblingList.size(); i++) {
+            String word = babblingList.get(i);
+            for (int j = 0; j < canSpeakWords.size(); j++) {
+                word = word.replaceAll(canSpeakWords.get(j), String.valueOf(j));
+            }
+            parsedList.add(word);
+        }
+
+        long count = parsedList.stream()
+                .filter(i ->
+                        i.chars().allMatch(c -> isNumber(c))
+                )
+                .filter(i ->
+                        {
+                            if (i.length() == 1) {
+                                return true;
+                            } else {
+                                char[] charArray = i.toCharArray();
+
+                                for (int j = 1; j < charArray.length; j++) {
+                                    if (charArray[j - 1] == charArray[j]) {
+                                        return false;
+                                    }
+                                }
+                                return true;
+                            }
+                        }
+                ).count();
+
+        return (int)count;
+    }
+
+    public boolean isNumber(int c) {
+        return c >= 48 && c <= 57;
+    }
+}
