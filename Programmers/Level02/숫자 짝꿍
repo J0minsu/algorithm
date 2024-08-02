@@ -1,0 +1,58 @@
+import java.util.*;
+import java.util.stream.IntStream;
+
+public class NumberPair {
+
+    public static void main(String[] args) {
+        System.out.println(solution("5525", "1255"));
+    }
+
+    public static String solution(String X, String Y) {
+
+        Map<Character, Integer> xMap = new HashMap<>();
+        Map<Character, Integer> yMap = new HashMap<>();
+        List nums = new ArrayList<Integer>();
+        for (char c : X.toCharArray()) {
+            xMap.put(c, xMap.getOrDefault(c, 0) + 1);
+        }
+
+        for (char c : Y.toCharArray()) {
+            yMap.put(c, yMap.getOrDefault(c, 0) + 1);
+        }
+
+        IntStream.range(0, 10).forEach(i ->
+            {
+                char target = String.valueOf(i).toCharArray()[0];
+                int xCount = xMap.getOrDefault(target, 0);
+                int yCount = yMap.getOrDefault(target, 0);
+
+                int min = Math.min(xCount, yCount);
+
+                if(min != 0) {
+                    IntStream.range(0, min).forEach(cnt -> nums.add(i));
+                }
+
+            }
+        );
+
+        nums.sort(Comparator.reverseOrder());
+
+        if(nums.isEmpty()) {
+            return "-1";
+        }
+
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < nums.size(); i++) {
+                builder.append(nums.get(i));
+        }
+
+        String result = builder.toString();
+
+        return (result.startsWith("0"))
+                ? "0"
+                : result;
+
+        }
+
+}
