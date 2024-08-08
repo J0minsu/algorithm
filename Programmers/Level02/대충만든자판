@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class 대충만든자판 {
+
+    public static void main(String[] args) {
+
+        int[] solution = solution(new String[]{"ABACD", "BCEFD"}, new String[]{"ABCD", "AABB"});
+        System.out.println("solution = " + solution[0]);
+        System.out.println("solution = " + solution[1]);
+
+    }
+
+
+    public static int[] solution(String[] keymap, String[] targets) {
+
+        Map<Character, Integer> minimumActionMap = new HashMap<>();
+        List<Integer> minimumActionCounts = new ArrayList<>();
+        List.of(keymap).forEach(s -> {
+            for(int i = 1; i <= s.length(); i++) {
+                Integer mapValue = minimumActionMap.getOrDefault(s.charAt(i - 1), Integer.MAX_VALUE);
+                minimumActionMap.put(s.charAt(i - 1), Math.min(i, mapValue));
+            }
+        });
+
+        List.of(targets).forEach(s -> {
+            int count = 0;
+            char[] charArray = s.toCharArray();
+            for(char c : charArray) {
+                Integer minCount = minimumActionMap.getOrDefault(Character.valueOf(c), -1);
+                if(minCount == -1) {
+                    count = -1;
+                    break;
+                }
+                count += minCount;
+            }
+            minimumActionCounts.add(count);
+        });
+
+        return minimumActionCounts.stream().mapToInt(i -> i).toArray();
+    }
+}
