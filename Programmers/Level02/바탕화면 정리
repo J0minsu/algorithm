@@ -1,0 +1,21 @@
+import java.util.TreeSet;
+
+class Solution {
+    public int[] solution(String[] wallpaper) {
+
+        TreeSet<Integer> xSet = new TreeSet<>();
+        TreeSet<Integer> ySet = new TreeSet<>();
+
+        for( int y = 0; y < wallpaper.length; y++ ) {
+            for( int x = 0; x < wallpaper[y].length(); x++ ) {
+                if(wallpaper[y].charAt(x) == '#') {
+                    xSet.add(x);
+                    ySet.add(y);
+                }
+            }
+        }
+
+        return new int[]{ySet.first(), xSet.first(), ySet.last() + 1, xSet.last() + 1};
+
+    }
+}
