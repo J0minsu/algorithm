@@ -1,0 +1,45 @@
+import java.util.HashMap;
+
+public class 햄버거만들기 {
+
+    public static void main(String[] args) {
+
+        int[] ints = {1, 2, 3, 1, 1, 2, 3, 1};
+
+        System.out.println("solution(ints) = " + solution(ints));
+
+    }
+
+    public static int solution(int[] ingredient) {
+
+        String receipt = "1231";
+        int result = 0;
+
+        if(ingredient.length < 4) {
+            return 0;
+        }
+
+        StringBuilder builder = new StringBuilder();
+
+        for (int i : ingredient) {
+            builder.append(i);
+
+            int length = builder.length();
+
+            if(length > receipt.length() - 1
+                && receipt.equals(
+                        builder.substring(length - receipt.length(), length)
+                   )
+            ) {
+                result++;
+                builder.delete(length - receipt.length(), length);
+            }
+
+        }
+
+
+
+        return result;
+    }
+
+}
