@@ -1,0 +1,80 @@
+package kakao;
+
+import java.util.*;
+
+public class 신고결과받기 {
+
+    public static void main(String[] args) {
+        int[] solution = solution(new String[]{"muzi", "frodo", "apeach", "neo"}, new String[]{"muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"}, 2);
+        for (int a : solution) {
+            System.out.println(a + ", ");
+        }
+    }
+
+    public static int[] solution(String[] ids, String[] report, int k) {
+
+        Map<String, AccusedPerson> map = new HashMap<>();
+        int[] result = new int[ids.length];
+
+        for (String s : report) {
+            String[] split = s.split(" ");
+            String reporter = split[0];
+            String accusedPerson = split[1];
+
+            map.put(accusedPerson,
+                    map.getOrDefault(accusedPerson, new AccusedPerson(accusedPerson))
+                            .reportedBy(reporter)
+            );
+        }
+
+        List<HashSet<String>> list = map.values()
+                .stream()
+                .filter(i -> i.reporters.size() >= k)
+                .map(AccusedPerson::getReporters)
+                .toList();
+
+        Map<String, Integer> statsMap = new HashMap<>();
+
+        for (HashSet<String> reporters : list) {
+            for (String reporter : reporters) {
+                statsMap.put(reporter, statsMap.getOrDefault(reporter, 0) + 1);
+            }
+        }
+
+
+        for (int i = 0; i < ids.length; i++) {
+            result[i] = statsMap.getOrDefault(ids[i], 0);
+        }
+
+        return result;
+
+    }
+
+    static class AccusedPerson {
+
+        private String name;
+        private HashSet<String> reporters = new HashSet<>();
+
+        public AccusedPerson(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public HashSet<String> getReporters() {
+            return reporters;
+        }
+
+        public AccusedPerson reportedBy(String name) {
+            reporters.add(name);
+            return this;
+        }
+    }
+
+}
