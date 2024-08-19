@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5562ade0-0b2f-4b5a-af33-7eb6ecc180d9" name="Default Changelist" comment="옹알이(2)">
-      <change afterPath="$PROJECT_DIR$/Programmers/대충만든자판" afterDir="false" />
+    <list default="true" id="5562ade0-0b2f-4b5a-af33-7eb6ecc180d9" name="Default Changelist" comment="카카오-신고결과받기">
+      <change afterPath="$PROJECT_DIR$/Programmers/Level02/예상대진표" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,12 +53,12 @@
     &quot;assignee&quot;: &quot;J0minsu&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://Minsu%20Jo@github.com/J0minsu/algorithm.git&quot;,
-    &quot;accountId&quot;: &quot;52c71ca7-a7c8-4438-abfb-b9d63552129d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://Minsu%20Jo@github.com/J0minsu/algorithm.git",
+    "accountId": "e9713f3e-406c-491d-ba10-0c7dc01f7410"
   }
-}</component>
+}]]></component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -98,19 +98,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/minsujo/Documents/repositories/algorithm&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/minsujo/Documents/repositories/algorithm",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Programmers/Level02" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.KAKAO_2021_RECO">
     <configuration name="BOJ1697" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm.BOJ1697" />
@@ -188,7 +194,13 @@
       <workItem from="1722992897976" duration="602000" />
       <workItem from="1723001236772" duration="597000" />
       <workItem from="1723037171085" duration="7000" />
-      <workItem from="1723040192099" duration="22000" />
+      <workItem from="1723040192099" duration="94000" />
+      <workItem from="1723085108234" duration="175000" />
+      <workItem from="1723165164729" duration="1000" />
+      <workItem from="1723166382794" duration="154000" />
+      <workItem from="1723433572890" duration="95000" />
+      <workItem from="1723520328464" duration="847000" />
+      <workItem from="1723772489636" duration="708000" />
     </task>
     <task id="LOCAL-00001" summary="옹알이(2)">
       <option name="closed" value="true" />
@@ -198,7 +210,23 @@
       <option name="project" value="LOCAL" />
       <updated>1722476876917</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="카카오-개인정보수집유효기간">
+      <option name="closed" value="true" />
+      <created>1723520389430</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723520389430</updated>
+    </task>
+    <task id="LOCAL-00003" summary="카카오-신고결과받기">
+      <option name="closed" value="true" />
+      <created>1723772523110</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723772523110</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -255,7 +283,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="옹알이(2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="옹알이(2)" />
+    <MESSAGE value="카카오-개인정보수집유효기간" />
+    <MESSAGE value="카카오-신고결과받기" />
+    <option name="LAST_COMMIT_MESSAGE" value="카카오-신고결과받기" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Algorithm/BOJ1629.java">
