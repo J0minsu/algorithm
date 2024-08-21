@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class 멀리뛰기 {
+
+    public static void main(String[] args) {
+
+        System.out.println(solution(2000) % 1234567L);
+    }
+
+    public static long solution(int n) {
+        return simpleFibonacci(n + 1);
+    }
+
+    public static long fibonacci(int n) {
+        if (n == 1 || n == 2) {
+            return 1;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+
+    public static long simpleFibonacci(int n) {
+        if(n == 1 || n == 2) {
+            return 1;
+        }
+
+        List<Long> fibonacciList = new ArrayList<>(List.of(0L, 1L, 1L));
+
+        for (int i = 3; i <= n; i++) {
+            fibonacciList.add(fibonacciList.get(i-2) % 1234567  + fibonacciList.get(i-1) % 1234567);
+        }
+
+        return fibonacciList.get(n);
+    }
+
+}

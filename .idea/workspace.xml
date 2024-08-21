@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5562ade0-0b2f-4b5a-af33-7eb6ecc180d9" name="Default Changelist" comment="카카오-신고결과받기">
-      <change afterPath="$PROJECT_DIR$/Programmers/Level02/예상대진표" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Programmers/Level02/멀리뛰기" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +200,7 @@
       <workItem from="1723166382794" duration="154000" />
       <workItem from="1723433572890" duration="95000" />
       <workItem from="1723520328464" duration="847000" />
-      <workItem from="1723772489636" duration="708000" />
+      <workItem from="1723772489636" duration="26345000" />
     </task>
     <task id="LOCAL-00001" summary="옹알이(2)">
       <option name="closed" value="true" />
